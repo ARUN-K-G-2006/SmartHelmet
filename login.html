@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartShield | Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://www.shutterstock.com/image-photo/portrait-group-construction-worker-arms-260nw-2611622271.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .login-container {
+      width: 100%;
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .login-header {
+      background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .login-header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .login-header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    
+    .login-form {
+      padding: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2d3748;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    }
+    
+    .login-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .login-btn:hover {
+      background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
+    }
+    
+    .login-btn:active {
+      transform: translateY(0);
+    }
+    
+    .error-message {
+      background: #fed7d7;
+      color: #c53030;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+      animation: shake 0.5s;
+    }
+    
+    .login-footer {
+      text-align: center;
+      padding: 20px;
+      color: #718096;
+      font-size: 14px;
+      border-top: 1px solid #e2e8f0;
+      background-color: rgba(248, 249, 250, 0.7);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+      20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 480px) {
+      .login-container {
+        max-width: 100%;
+      }
+      
+      .login-form {
+        padding: 20px;
+      }
+      
+      body {
+        padding: 10px;
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <h1><i class="fas fa-hard-hat"></i> SmartShield</h1>
+      <p>Industrial Safety Helmet & Health Monitoring System</p>
+    </div>
+    
+    <form id="loginForm" class="login-form">
+      <div class="form-group">
+        <label for="username"><i class="fas fa-user"></i> Username</label>
+        <input type="text" id="username" name="username" required placeholder="Enter ADMIN">
+      </div>
+      
+      <div class="form-group">
+        <label for="password"><i class="fas fa-lock"></i> Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter ADMIN">
+      </div>
+      
+      <button type="submit" class="login-btn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      
+      <div id="loginError" class="error-message">
+        <i class="fas fa-exclamation-circle"></i> Invalid credentials. Please try again.
+      </div>
+    </form>
+    
+    <div class="login-footer">
+      <p>© 2025 TechnoMind Expo | Authorized Personnel Only</p>
+    </div>
+  </div>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // Simple client-side validation
+      if (username === 'ADMIN' && password === 'ADMIN') {
+        // Show success message
+        const loginBtn = document.querySelector('.login-btn');
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+        loginBtn.disabled = true;
+        
+        // Send login request to server
+        fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            loginBtn.innerHTML = '<i class="fas fa-check-circle"></i> Success! Redirecting...';
+            loginBtn.style.background = 'linear-gradient(135deg, #38a169 0%, #48bb78 100%)';
+            
+            // Redirect to main dashboard after a brief delay
+            setTimeout(() => {
+              window.location.href = '/';
+            }, 1000);
+          } else {
+            // Show error message
+            document.getElementById('loginError').style.display = 'block';
+            loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+            loginBtn.disabled = false;
+            
+            // Hide error message after 3 seconds
+            setTimeout(() => {
+              document.getElementById('loginError').style.display = 'none';
+            }, 3000);
+          }
+        })
+        .catch(error => {
+          console.error('Login error:', error);
+          document.getElementById('loginError').style.display = 'block';
+          loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+          loginBtn.disabled = false;
+        });
+      } else {
+        // Show error message
+        document.getElementById('loginError').style.display = 'block';
+        
+        // Hide error message after 3 seconds
+        setTimeout(() => {
+          document.getElementById('loginError').style.display = 'none';
+        }, 3000);
+      }
+    });
+    
+    // Clear error when user starts typing
+    document.getElementById('username').addEventListener('input', function() {
+      document.getElementById('loginError').style.display = 'none';
+    });
+    
+    document.getElementById('password').addEventListener('input', function() {
+      document.getElementById('loginError').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

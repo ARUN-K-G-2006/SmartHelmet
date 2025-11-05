@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartShield | Industrial Safety Helmet</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Link to Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <script>
+  // Check if user is authenticated - must be the first script
+  // Use server-side session instead of client-side storage
+  fetch('/api/check-auth')
+    .then(response => response.json())
+    .then(data => {
+      if (!data.authenticated) {
+        window.location.href = '/login.html';
+      }
+    })
+    .catch(error => {
+      console.error('Auth check failed:', error);
+      window.location.href = '/login.html';
+    });
+</script>
+  <div class="container">
+    <header class="header">
+      <h1><i class="fas fa-hard-hat"></i> SmartShield</h1>
+      <p>Industrial Safety Helmet & Health Monitoring System</p>
+    </header>
+    
+    <div class="ip-address">
+      <h3><i class="fas fa-wifi"></i> Device IP Address</h3>
+      <!-- The IP will be inserted by script.js later -->
+      <div class="ip" id="ipAddress">Connecting...</div>
+    </div>
+    
+    <div class="dashboard">
+      <div class="gauge-card" id="gasCard">
+        <div class="gauge-icon"><i class="fas fa-wind"></i></div>
+        <h2 class="gauge-title">Gas Level</h2>
+        <div class="gauge-value"><span id="gasValue">0</span><span class="gauge-unit">PPM</span></div>
+        <div class="gauge-status status-normal" id="gasStatus">NORMAL</div>
+      </div>
+      
+      <div class="gauge-card" id="tempCard">
+        <div class="gauge-icon"><i class="fas fa-temperature-high"></i></div>
+        <h2 class="gauge-title">Temperature</h2>
+        <div class="gauge-value"><span id="tempValue">0.0</span><span class="gauge-unit">°C</span></div>
+        <div class="gauge-status status-normal" id="tempStatus">NORMAL</div>
+      </div>
+      
+      <div class="gauge-card" id="humidityCard">
+        <div class="gauge-icon"><i class="fas fa-tint"></i></div>
+        <h2 class="gauge-title">Humidity</h2>
+        <div class="gauge-value"><span id="humValue">0.0</span><span class="gauge-unit">%</span></div>
+        <div class="gauge-status status-normal" id="humStatus">NORMAL</div>
+      </div>
+      
+      <div class="gauge-card" id="pulseCard">
+        <div class="gauge-icon"><i class="fas fa-heartbeat"></i></div>
+        <h2 class="gauge-title">Heart Rate</h2>
+        <div class="gauge-value"><span id="pulseValue">0</span><span class="gauge-unit">BPM</span></div>
+        <div class="gauge-status status-normal" id="pulseStatus">NORMAL</div>
+      </div>
+    </div>
+    
+    <div class="status-container">
+      <div class="alert-panel safe" id="alertPanel">
+        <div class="alert-icon float-animation"><i class="fas fa-check-circle"></i></div>
+        <h2 class="alert-title">ALL SYSTEMS NORMAL</h2>
+        <p class="alert-message">All parameters within safe limits. Continue operations.</p>
+      </div>
+      
+      <div class="buzzer-panel" id="buzzerPanel">
+        <div class="buzzer-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3 class="buzzer-title">Alert Buzzer</h3>
+        <div class="buzzer-status buzzer-inactive" id="buzzerStatus">INACTIVE</div>
+      </div>
+    </div>
+    
+    <!-- Additional Info Section -->
+    <div class="info-section">
+      <h3><i class="fas fa-info-circle"></i> System Status</h3>
+      <p><i class="fas fa-check-circle status-normal"></i> Helmet Sensor: Connected</p>
+      <p><i class="fas fa-check-circle status-normal"></i> Pulse Monitor: Connected</p>
+      <p><i class="fas fa-check-circle status-normal"></i> Server: Online</p>
+      <p><i class="fas fa-check-circle status-normal"></i> Data Flow: Active</p>
+    </div>
+    
+    <!-- Statistics Grid -->
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-title">Uptime</div>
+        <div class="stat-value" id="uptime">00:00:00</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-title">Data Received</div>
+        <div class="stat-value" id="dataPoints">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-title">Last Update</div>
+        <div class="stat-value" id="lastUpdate">--:--:--</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-title">Current Status</div>
+        <div class="stat-value" id="currentStatus">Normal</div>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <p>SmartShield Helmet & Health Monitoring System | © 2025 TechnoMind Expo</p>
+    </footer>
+  </div>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
