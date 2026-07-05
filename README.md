@@ -1,4 +1,4 @@
-# SmartShield – Industrial Safety Helmet & Health Monitoring System
+# SmartShield – IoT based Safety Helmet for Workers
 ## 📌 About the Project
 
 **SmartShield** is an IoT-based smart helmet designed for workers in hazardous environments such as mines, chemical plants, construction sites, and oil refineries. The system continuously monitors:
@@ -87,6 +87,6 @@ The `node_modules` folder is **excluded** from the repository to keep it lightwe
 
 ### 2. Clone the repository
 ```bash
-git clone https://github.com/your-username/SmartShield.git
+git clone https://github.com/ARUN-K-G-2006/SmartHelmet.git
 ```
 Run the two Arduino IDE files separately and then run : "node server.js" in VS code 
