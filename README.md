@@ -57,20 +57,19 @@ Both modules are powered by a laptop USB (for the prototype). Each ESP sends its
 
 ## 📁 Repository Structure
 ```text
-SMARTSHIELD/
+SMARTHELMET/
 ├── PulseSensorTest/
-│   └── PulseSensor.ino        # Firmware for the dedicated Heart Rate ESP8266
+│   └── PulseSensorTest.ino        # Firmware for the dedicated Heart Rate ESP8266
 ├── WebServer/
 │   └── WebServer.ino          # Firmware for the main Helmet Sensors ESP8266
-└── SmartHelmet/               # Web Application Directory
-    ├── node_modules/          # Node dependencies
-    ├── server.js              # Node.js Express backend server
-    ├── index.html             # Main dashboard UI
-    ├── login.html             # Secure login portal
-    ├── style.css              # Dashboard and login styling
-    ├── script.js              # Frontend logic for fetching API data
-    ├── package.json           # Project metadata and dependencies
-    └── package-lock.json
+├── node_modules/          # Node dependencies
+├── server.js              # Node.js Express backend server
+├── index.html             # Main dashboard UI
+├── login.html             # Secure login portal
+├── style.css              # Dashboard and login styling
+├── script.js              # Frontend logic for fetching API data
+├── package.json           # Project metadata and dependencies
+└── package-lock.json
 ```
     
 ---
